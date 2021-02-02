@@ -32,6 +32,17 @@ body
     left: 0
     z-index: 1000
 
+.header.fixed 
+    height: auto
+    position: fixed
+    background-color: #31344e
+
+.header.fixed .header__inner 
+    padding-top: 15px
+    padding-bottom: 15px
+    border-bottom: 0
+
+
 .header__inner 
     display: flex
     justify-content: space-between
@@ -92,6 +103,7 @@ body
     vertical-align: top
     padding: 14px 40px
     font-size: 13px
+    border: 0
     color: #fff
     font-weight: 600
     text-transform: uppercase
@@ -118,10 +130,10 @@ body
 .features 
     display: flex
     flex-wrap: wrap
-    margin: 100px 0px
+    margin: 95px 0px
 
 .features__item 
-    padding: 0 20px
+    padding: 0 40px
     width: 33.3333%
     text-align: center
     margin: 25px 0px
@@ -196,7 +208,6 @@ body
 
 .team 
     margin: 100px 0 70px
-    padding: 0 15px
 
 .team__inner 
     display: flex
@@ -268,14 +279,25 @@ body
         background-color: #ffffff
 .social--footer .social__icon
     fill: #ffffff 
+.social__item:hover .social__icon 
+    fill: #000
+
 /* Reviews */
 .reviews
     background-color: #53354a
     overflow: hidden
 
+.reviews__slider 
+    height: 500px
+    overflow: hidden
+
+.reviews__slider.slick-initialized 
+    height: auto
+
 .reviews__item 
     display: flex
     flex-wrap: wrap
+    overflow: hidden
 
 
 .reviews__photo
@@ -303,13 +325,53 @@ body
     font-size: 36px
     color: #ffffff
     margin-bottom: 25px
+    line-height: 1.2
 
 .reviews__author
     font-weight: bold
     text-transform: uppercase
     font-size: 13px
     color: #ffffff
-    
+.slick-dots 
+    display: flex
+    justify-content: center
+    margin: 0
+    padding: 0 0 10px
+    list-style: none
+    width: 50%
+
+    position: absolute
+    bottom: 0
+    right: 0
+    z-index: 2
+
+
+.slick-dots li 
+    margin: 0 5px
+
+
+.slick-dots button 
+    width: 15px
+    height: 15px
+    padding: 0
+
+    background: #fff
+    border-radius: 50%
+    border: 0
+    opacity: .5
+    cursor: pointer
+
+    font-size: 0
+    color: transparent
+
+
+.slick-dots button:focus 
+    outline: 0
+
+
+.slick-dots .slick-active button 
+    opacity: 1
+
 /* Download */
 
 .download
@@ -362,6 +424,7 @@ body
     color: rgba(255,255,255, 0.5 )
     line-height: 1.5
 
+/* Copyright */
 .copyright
     padding: 20px 0
     background-color: #313454
@@ -435,6 +498,23 @@ body
     /* Nav */
     .nav 
         display: none
+        width: 100%
+        flex-direction: column
+
+        background-color: #31344e
+        text-align: right
+
+        position: absolute
+        top: 100%
+        right: 0
+        
+    .nav.show 
+        display: flex
+    
+
+    .nav__link 
+        padding: 9px 15px
+    
     
     /* Burger */
     .burger 
